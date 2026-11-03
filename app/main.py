@@ -9,6 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import pymysql
+from dotenv import load_dotenv
 from fastapi import FastAPI, Form, HTTPException, Query, Request
 from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
@@ -16,16 +17,17 @@ from fastapi.templating import Jinja2Templates
 
 BASE_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = BASE_DIR.parent
+load_dotenv(PROJECT_ROOT / '.env')
 APP_NAME = os.getenv('APP_NAME', 'OpsCenter')
-TEAM_NAME = os.getenv('TEAM_NAME', 'Equipo LAB')
+TEAM_NAME = os.getenv('TEAM_NAME', 'Grupo 2')
 APP_ENV = os.getenv('APP_ENV', 'LAB')
 APP_VERSION = os.getenv('APP_VERSION', '1.0.0')
-APP_PORT = int(os.getenv('APP_PORT', '8101'))
+APP_PORT = int(os.getenv('APP_PORT', '8102'))
 DB_HOST = os.getenv('DB_HOST', '127.0.0.1')
 DB_PORT = int(os.getenv('DB_PORT', '3306'))
-DB_NAME = os.getenv('DB_NAME', 'opscenter')
-DB_USER = os.getenv('DB_USER', 'opscenter')
-DB_PASSWORD = os.getenv('DB_PASSWORD', '')
+DB_NAME = os.getenv('DB_NAME', 'dbg2')
+DB_USER = os.getenv('DB_USER', 'userg2')
+DB_PASSWORD = os.getenv('DB_PASSWORD', 'g2_user_2026')
 STARTED_AT = datetime.now(timezone.utc)
 
 logger = logging.getLogger('opscenter')
