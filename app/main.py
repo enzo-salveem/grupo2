@@ -8,6 +8,7 @@ from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 
+# COMENZAR AQUI
 import pymysql
 from dotenv import load_dotenv
 from fastapi import FastAPI, Form, HTTPException, Query, Request
